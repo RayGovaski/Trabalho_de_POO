@@ -1,34 +1,44 @@
+import java.util.List;
 import java.util.ArrayList;
 
-class ControleEstoque{   
-    public String itensEstoque;
-    public String fluxoEstoque;
+public class ControleEstoque {
+    private List<String> listaItens;
 
-    ControleEstoque(String itens){
-        this.itensEstoque = itens;
+    public ControleEstoque() {
+        listaItens = new ArrayList<>();
     }
 
-    public String getItens() {
-        return itensEstoque;
+    public void adicionarItem(String item) {
+        listaItens.add(item);
+        System.out.println("Adicionando" + item + "(s) ao estoque.");
     }
 
-    public void criarLista(String itens) {
-        
+    public void removerItem(String item) {
+        if (ControleEstoque.containsKey(item)) {
+            int quantidadeAtual = ControleEstoque.get(item);
+            if (quantidade <= quantidadeAtual) {
+                ControleEstoque.put(item, quantidadeAtual - quantidade);
+                System.out.println("Removido " + quantidade + " " + item + "(s) do estoque.");
+            } else {
+                System.out.println("Quantidade insuficiente de " + item + " no estoque.");
+            }
+        } else {
+            System.out.println(item + " não encontrado no estoque.");
+        }
     }
 
-    public void setItens(String itens) {
-  
+    public void imprimirLista() {
+        for (String item : listaItens) {
+            System.out.println(item);
+        }
     }
-} 
 
- class Main {
-    public static void main(String[] args) {  //agora tenho que trocar o tipo String p classe p conseguir usar o atributo como lista
-        ArrayList<String> listaItens = new ArrayList<String>();
-        listaItens.add("Café");
-        listaItens.add("açúcar");
-
-        for (int i = 0; i < listaItens.size(); i ++) {
-        System.out.println(listaItens.get(i));
+    public static void main(String[] args) {
+       ControleEstoque i1 = new ControleEstoque();
+        i1.adicionarItem("Item 1");
+        i1.adicionarItem("Item 2");
+        i1.imprimirLista();
+        i1.removerItem("Item 1");
+        i1.imprimirLista();
     }
-    }    
 }
