@@ -1,0 +1,31 @@
+import java.util.ArrayList;
+
+public class AlasMuseu {
+
+    private String nome;
+    private ArrayList<Obra> obras;
+
+    public AlasMuseu(String nome) {
+        this.nome = nome;
+        this.obras = new ArrayList<>();
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void adicionarObra(Obra obra) {
+        obras.add(obra);
+    }
+
+    public void removerObra(Obra obra) {
+        obras.remove(obra);
+    }
+
+    public void exibirObras() {
+        System.out.println("Ala: " + nome);
+        for (Obra obra : obras) {
+            obra.exibirInformacoes();
+        }
+    }
+}
