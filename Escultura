@@ -1,0 +1,16 @@
+public class Escultura extends Obra {
+    private String material;
+
+    public Escultura(String titulo, String artista, int ano, String material) {
+        super(titulo, artista, ano);
+        this.material = material;
+    }
+
+    @Override
+    public void exibirInformacoes() {
+        System.out.println("Título: " + getTitulo());
+        System.out.println("Artista: " + getArtista());
+        System.out.println("Ano: " + getAno());
+        System.out.println("Material: " + material);
+    }
+}
