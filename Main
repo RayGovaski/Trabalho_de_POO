@@ -1,0 +1,14 @@
+public class Main {
+    public static void main(String[] args) {
+        Museu museu = new Museu();
+        museu.criarAla("Ala A");
+
+        Obra pintura = new Pintura("Mona Lisa", "Leonardo da Vinci", 1503, "Óleo sobre tela");
+        museu.adicionarObra("Ala A", pintura);
+
+        Obra escultura = new Escultura("David", "Michelangelo", 1504, "Mármore");
+        museu.adicionarObra("Ala A", escultura);
+
+        museu.exibirObrasAla("Ala A");
+    }
+}
