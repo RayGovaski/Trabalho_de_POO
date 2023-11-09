@@ -1,0 +1,4 @@
+public interface InterfaceDePesquisa {
+    void pesquisarObras();
+    void exibirInformacoesObra();
+}
