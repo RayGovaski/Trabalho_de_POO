@@ -1,11 +1,19 @@
-import java.io.*;
+import java.io.Serial;
+import java.io.Serializable;
 
-public abstract class Obra implements Serializable {
+public class Obra implements Serializable {
     private String titulo;
     private String artista;
     private int ano;
+    private static final long serialVersionUID = 5962408305911058254l;
 
-    public Obra(String titulo, String artista, int ano) {
+    public Obra(String t, String a, int an) {
+        this.titulo = t;
+        this.artista = a;
+        this.ano = an; 
+    }
+
+    /*public Obra(String titulo, String artista, int ano) {
         this.titulo = titulo;
         this.artista = artista;
         this.ano = ano;
@@ -22,8 +30,6 @@ public abstract class Obra implements Serializable {
     public int getAno() {
         return ano;
     }
-
-    public abstract void exibirInformacoes();
 
     public void serializarObra(String nomeArquivo) {
         try {
@@ -50,5 +56,5 @@ public abstract class Obra implements Serializable {
             e.printStackTrace();
         }
         return obra;
-    }
+    }*/
 }
