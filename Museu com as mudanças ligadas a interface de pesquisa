@@ -1,0 +1,64 @@
+import java.util.ArrayList;
+
+public class Museu {
+    private ArrayList<AlasMuseu> alas; // Especifique o tipo AlasMuseu na ArrayList.
+
+    public Museu() {
+        alas = new ArrayList<>(); // Corrija a inicialização da ArrayList.
+    }
+
+    public void criarAla(String nome) {
+        AlasMuseu ala = new AlasMuseu(nome);
+        alas.add(ala);
+    }
+
+    public void adicionarObra(String nomeAla, Obra obra) {
+        for (AlasMuseu ala : alas) {
+            if (ala.getNome().equals(nomeAla)) { // Use getNome() para obter o nome da Ala.
+                ala.adicionarObra(obra);
+                return;
+            }
+        }
+        System.out.println("Ala não encontrada.");
+    }
+
+    public void removerObra(String nomeAla, Obra obra) {
+        for (AlasMuseu ala : alas) {
+            if (ala.getNome().equals(nomeAla)) {
+                ala.removerObra(obra);
+                return;
+            }
+        }
+        System.out.println("Ala não encontrada.");
+    }
+
+    public void exibirObrasAla(String nomeAla) {
+        for (AlasMuseu ala : alas) {
+            if (ala.getNome().equals(nomeAla)) {
+                ala.exibirObras();
+                return;
+            }
+        }
+        System.out.println("Ala não encontrada.");
+        public class Museu implements InterfaceDePesquisa {
+
+            // ... Outros atributos e métodos da classe Museu ...
+
+            @Override
+            public List<Obra> pesquisarObras(String titulo) {
+                List<Obra> obrasEncontradas = new ArrayList<>();
+                for (Obra obra : obras) {
+                    if (obra.getTitulo().equalsIgnoreCase(titulo)) {
+                        obrasEncontradas.add(obra);
+                    }
+                }
+                return obrasEncontradas;
+            }
+
+            @Override
+            public void exibirInformacoesObra() {
+                // ... Implemente a lógica para exibir informações sobre a obra ...
+            }
+        }
+    }
+}
