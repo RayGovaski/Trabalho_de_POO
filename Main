@@ -1,5 +1,9 @@
+import javax.swing.*;
+import javax.swing.*;
+
+
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args){
         Museu museu = new Museu();
         museu.criarAla("Ala A");
 
@@ -10,5 +14,8 @@ public class Main {
         museu.adicionarObra("Ala A", escultura);
 
         museu.exibirObrasAla("Ala A");
+
+        MyFrame myFrame = new MyFrame();
     }
 }
+
