@@ -1,16 +1,27 @@
-import java.io.Serial;
-import java.io.Serializable;
+import java.io.*;
 
 public class Obra implements Serializable {
-    private String titulo;
     private String artista;
-    private int ano;
+    private String titulo;
+    private String tecnica;
+    private String dimensao;
+    private int dtProducao;
     private static final long serialVersionUID = 5962408305911058254l;
 
-    public Obra(String t, String a, int an) {
-        this.titulo = t;
+    public Obra( String a, String t, String tec, String dim, int dt) {
         this.artista = a;
-        this.ano = an; 
+        this.titulo = t;
+        this.tecnica = tec;
+        this.dimensao = dim;
+        this.dtProducao = dt; 
+    }
+
+    public void mostrar() {
+        System.out.println("Artista: "+artista);
+        System.out.println("Título: "+titulo);
+        System.out.println("Técnica: "+tecnica);
+        System.out.println("Dimensões: "+dimensao);
+        System.out.println("Data: "+dtProducao);
     }
 
     /*public Obra(String titulo, String artista, int ano) {

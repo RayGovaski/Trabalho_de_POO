@@ -1,20 +1,30 @@
 import java.io.*;
 
-public class Main {  // Mudar classe Obra para concreta
+public class Main {
     public static void main(String[] args) throws IOException,
     ClassNotFoundException {
-        /*Obra ob1 = new Obra("A Noite Estrelada", "Van Gogh", 1889);
-        System.out.println(ob1);*/
-
-        /*ObjectOutputStream objout = new ObjectOutputStream(new FileOutputStream("produto.byte"));
-        objout.writeObject(ob1);
-        objout.close();*/
-
-        ObjectInputStream objout = new ObjectInputStream(new FileInputStream("produto.byte"));
-        Obra ob1 = (Obra) objout.readObject();
-        objout.close();
-        System.out.println(ob1);
+        Obra ob1 = new Obra("Van Gogh", "A Noite Estrelada", "Óleo sobre tela", "73x92cm" ,1889);
         
+        salvarObras(ob1);
+
+        Obra ob2 = carregarObra(); //ver oq fazer com esse djabo de ob2
+    }
+
+    public static void salvarObras(Obra ob) throws IOException {
+        FileOutputStream safe = new FileOutputStream("obra.um");
+        ObjectOutputStream offsafe = new ObjectOutputStream(safe);
+
+        offsafe.writeObject(ob);
+        offsafe.close();
+        safe.close();
+    }
+
+    public static Obra carregarObra() throws IOException, ClassNotFoundException {
+        FileInputStream esp = new FileInputStream("obra.um");
+        ObjectInputStream omg = new ObjectInputStream(esp);
+        Obra ob = (Obra) omg.readObject();
+        omg.close();
+        esp.close();
+        return ob;
     }
 }
-
