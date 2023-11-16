@@ -1,20 +1,34 @@
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import javax.swing.ImageIcon;
+import java.util.ArrayList;
 
-public class OutraPagina{
+public class OutraPagina {
 
     JFrame frame2 = new JFrame();
-    
 
-    OutraPagina(){
+    OutraPagina(ArrayList<PinturaEsculturaModel> dados) {
+        int yPos = 10; // Posição inicial Y
 
-        frame2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame2.setSize(420,420);
-        frame2.setLayout(null);
+        for (var dados2 : dados) {
+            JLabel label2 = new JLabel();
+            frame2.add(label2);
+            label2.setForeground(new Color(0, 0, 0));// setar a cor da fonte
+            label2.setFont(new Font("Impact", Font.PLAIN, 20));// setar a fonte o tipo e o tamanho
+            label2.setBounds(10, yPos, 400, 100); // Ajuste da posição Y
+            var text = "<html>" + dados2.artista + "<br>" + dados2.titulo + "<br>" + dados2.ano + "<br>" + dados2.tecnica + "</html>";
+            label2.setText(text);
+
+            ImageIcon image3 = new ImageIcon("C:\\Users\\rayyy\\OneDrive\\Área de Trabalho\\proj\\imagens\\Mona.png");
+            label2.setIcon(image3);
+
+            yPos += 120; // Incremento na posição Y para o próximo elemento
+        }
+
+        frame2.setResizable(false);
+        frame2.setSize(420, 500);
+        frame2.setLayout(null); // Define o layout como nulo para poder usar o setBounds diretamente
         frame2.setVisible(true);
     }
 
 }
+
