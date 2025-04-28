@@ -4,7 +4,7 @@
 
 ## Descrição do Projeto
 
-Este projeto foi desenvolvido como parte da disciplina de Programação Orientada a Objetos (POO), cursada no 4º período do curso de Bacharelado em Sistemas de Informação (BSI) da PUCPR.  
+Este projeto foi desenvolvido como parte da disciplina de Programação Orientada a Objetos (POO), cursada no 2º período do curso de Bacharelado em Sistemas de Informação (BSI) da PUCPR.  
 O sistema simula a gestão de um museu, permitindo a criação, visualização e remoção de obras de arte, como quadros e esculturas, dentro das diferentes alas do museu.
 
 ---
