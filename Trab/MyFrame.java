@@ -128,7 +128,7 @@ public class MyFrame extends JFrame implements ActionListener {
         this.add(button4);
         this.setLayout(null);
 
-        ImageIcon image = new ImageIcon("C:\\Users\\rayyy\\OneDrive\\Área de Trabalho\\proj\\imagens\\logo.png"); // cria o icon da pagina
+        ImageIcon image = new ImageIcon("imagens/logo.png"); // cria o icon da pagina
         this.setIconImage(image.getImage());// muda o icon da pagina
         this.getContentPane().setBackground(new Color(204,204,204));//muda a cor do background
 
