@@ -27,6 +27,5 @@ public abstract class Obra implements Serializable {
         return ano;
     }
 
-
     public abstract PinturaEsculturaModel exibirInformacoes();// Método abstrato que deve ser implementado por subclasses para exibir informações específicas da obra
 }

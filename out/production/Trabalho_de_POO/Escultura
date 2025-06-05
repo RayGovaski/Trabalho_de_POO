@@ -1,0 +1,21 @@
+import java.io.Serializable;
+
+// Classe da escultura, é uma subclasse de Obra
+public class Escultura extends Obra implements Serializable {
+
+    private String tecnica;// Atributo adicional específico para esculturas
+
+    public Escultura(String titulo, String artista, int ano, String tecnica) {// Construtor que recebe informações básicas e a técnica da escultura
+        super(titulo, artista, ano);
+        this.tecnica = tecnica;
+    }
+
+    public PinturaEsculturaModel exibirInformacoes() {    // Método para exibir as informações da escultura
+        var tit = "Título: " + getTitulo();// Obtém informações básicas da obra usando métodos da superclasse (Obra)
+        var art = "Artista: " + getArtista();
+        var ano = "Ano: " + getAno();
+        var tec = "Técnica: " + tecnica;
+
+        return new PinturaEsculturaModel(tit, art, ano, tec);// Retorna um modelo contendo todas as informações
+    }
+}
